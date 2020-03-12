@@ -1,6 +1,6 @@
 import React from "react";
 
-class Test extends React.Component {
+class TestInput extends React.Component {
     state = {
         myValue: ''
     };
@@ -28,4 +28,4 @@ class Test extends React.Component {
         )
     }
 }
-export default Test
+export default TestInput
