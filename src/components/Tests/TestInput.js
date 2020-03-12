@@ -17,12 +17,12 @@ class Test extends React.Component {
     {
         return (
             <div>
-                <input className="test-input input-group-append"
+                <input className="test-input"
                        placeholder = 'Введите значение'
                        onChange = {this.onChangeHandler}
                        value = {this.state.myValue}
                 />
-                       <button className="btn-success btn-lg"onClick={this.onButtonClickHandler}>Получить введенный текст</button>
+                       <button className="btn-success btn-sm" onClick={this.onButtonClickHandler}>Получить введенный текст</button>
             </div>
 
         )
