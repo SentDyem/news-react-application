@@ -8,10 +8,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-        <div className="jumbotron">
-            <h1>Новостной портал</h1>
+        <div className="container-fluid">
+            <h1 className="jumbotron text-center shadow-sm">Azure News <img src="https://lh3.googleusercontent.com/proxy/aK7cgtAicNQnR6lVjcSPV0rtw3ozroVCam8UvLF_wUyFGrnjhfd6JXDqRII8fwSqfmDc1tXalzV8RC9n8__d4ZckotQqWdkk9riGdqqhd1-yu2__vhhJmVoqbE1NUPEF45W02m9r3SLIFfuSqCOyDirbSb6Ib452wrXAM9ZKE28Mpd3yaIGHKO8vkw" alt=""/></h1>
         </div>
-      <News data = {myNews} />
+      <News data = {myNews}/>
       <Comments />
     </div>
   );

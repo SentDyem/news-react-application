@@ -20,11 +20,18 @@ p {
   padding: 3px 5px;
 }
 
-.news__author {
+.author {
   text-decoration: underline;
   color: #007DDC;
 }
-.news__count {
+.count {
   margin: 10px 0 0 0;
   display: block;
+}
+.App img {
+  height: 64px;
+  weight: 64px;
+}
+.jumbotron {
+  text-align: center;
 }

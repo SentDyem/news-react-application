@@ -1,12 +1,12 @@
 import React from "react";
 import './News.css';
 import Article from "./Article";
-import myNews from "./Data/myNews";
 
 class News extends React.Component {
-    render() {
+    renderNews = () =>
+    {
         const { data } = this.props;
-        let newsTemplate;
+        let newsTemplate = null;
 
         if (data.length > 0) {
             newsTemplate = data.map(function (item) {
@@ -15,17 +15,18 @@ class News extends React.Component {
                 )
             });
         }
-
         else
         {
             newsTemplate = <p>К сожалению новостей нет.</p>
         }
-
-        console.log(newsTemplate);
+        return newsTemplate;
+    };
+    render() {
+        const { data } = this.props;
 
         return (
             <div>
-                {newsTemplate}
+                {this.renderNews()}
                 {
                     data.length ? <strong>Всего новостей - {data.length}</strong> : null
                 }
