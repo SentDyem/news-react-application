@@ -1,4 +1,7 @@
 import React from "react";
+import './News.css';
+import Article from "./Article";
+import myNews from "./Data/myNews";
 
 class News extends React.Component {
     render() {
@@ -8,10 +11,7 @@ class News extends React.Component {
         if (data.length > 0) {
             newsTemplate = data.map(function (item) {
                 return (
-                    <div key={item.id}>
-                        <h3 className="author">{item.author}</h3>
-                        <p className="text">{item.text}</p>
-                    </div>
+                    <Article key = {item.id} data = {item}/>
                 )
             });
         }
@@ -26,7 +26,9 @@ class News extends React.Component {
         return (
             <div>
                 {newsTemplate}
-                <strong> Количество новостей - {data.length} </strong>
+                {
+                    data.length ? <strong>Всего новостей - {data.length}</strong> : null
+                }
             </div>
 
         )
