@@ -3,6 +3,7 @@ import './News.css';
 import Article from "./Article";
 
 class News extends React.Component {
+
     renderNews = () =>
     {
         const { data } = this.props;

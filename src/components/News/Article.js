@@ -13,7 +13,6 @@ class Article extends React.Component {
     render() {
         const {author, text, bigText} = this.props.data;
         const { visible } = this.state;
-        console.log('render', this)
         return (
             <div className="article">
                 <li>
