@@ -34,6 +34,19 @@ class Add extends React.Component {
             });
     };
 
+    validate = () => {
+        const {textAuthor, textValue} = this.state;
+        if (textAuthor == 0 || textValue == 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
 
     render()
     {
@@ -62,10 +75,9 @@ class Add extends React.Component {
 
                     <button className="add__btn btn-sm"
                             onClick={this.onButtonClickHandler}
-                            disabled={!agree}>
+                            disabled={this.validate()}>
                         Отправить
                     </button>
-
                 </form>
             </div>
 
