@@ -5,6 +5,7 @@ import Comments from "./components/Comments/Comments";
 import myNews from "./components/News/Data/myNews";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Add from './components/Tests/Add';
+import TestBlock from "./components/Tests/TestBlock";
 import TestInput2 from "./components/Tests/TestInput2";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <News data = {myNews}/>
       <Comments />
       <Add />
+      <TestBlock />
     </div>
   );
 }
