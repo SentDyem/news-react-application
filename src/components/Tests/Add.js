@@ -4,7 +4,6 @@ class Add extends React.Component {
     state = {
         textAuthor: '',
         textValue: '',
-        agree: 'false'
     };
 
     onChangeAuthor = (e) => {
@@ -19,7 +18,7 @@ class Add extends React.Component {
             {
                 textValue: e.target.value
             })
-    }
+    };
 
     onButtonClickHandler = (e) => {
         e.preventDefault();
@@ -45,12 +44,12 @@ class Add extends React.Component {
             return false;
         }
 
-    }
+    };
 
 
     render()
     {
-        const { textAuthor, textValue, agree } = this.state;
+        const { textAuthor, textValue} = this.state;
         return (
             <div>
                 <form className='add'>
@@ -84,4 +83,4 @@ class Add extends React.Component {
         )
     }
 }
-export default Add
+export default Add;
