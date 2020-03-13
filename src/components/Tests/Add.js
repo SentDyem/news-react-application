@@ -21,16 +21,16 @@ class Add extends React.Component {
             })
     }
 
-    onButtonClickHandler = () => {
-        alert(
-            this.state.textAuthor
-            )
+    onButtonClickHandler = (e) => {
+        e.preventDefault();
+        const {textAuthor, textValue} = this.state;
+        alert(textAuthor + ' ' + textValue)
     };
 
     onChangeCheckBox = (e) => {
         this.setState(
             {
-                agree: e.target.checked
+                agree: e.currentTarget.checked
             });
     };
 
@@ -62,8 +62,7 @@ class Add extends React.Component {
 
                     <button className="add__btn btn-sm"
                             onClick={this.onButtonClickHandler}
-                            disabled={!agree}
-                    >
+                            disabled={!agree}>
                         Отправить
                     </button>
 
