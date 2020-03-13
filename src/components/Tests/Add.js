@@ -2,14 +2,28 @@ import React from "react";
 
 class Add extends React.Component {
     state = {
-        myValue: ''
-    };
-    onChangeHandler = (e) => {
-        this.setState({myValue: e.target.value})
+        textAuthor: '',
+        textValue: ''
     };
 
+    onChangeAuthor = (e) => {
+        this.setState({
+            textAuthor: e.target.value
+        })
+    };
+
+    onChangeTextDescription = (e) =>
+    {
+        this.setState(
+            {
+                textValue: e.target.value
+            })
+    }
+
     onButtonClickHandler = () => {
-        alert(this.state.myValue)
+        alert(
+            this.state.textAuthor
+            )
     };
 
 
@@ -18,15 +32,26 @@ class Add extends React.Component {
         return (
             <div>
                 <form className='add'>
-                    <input className="test-input"
-                           placeholder = 'Введите значение'
-                           onChange = {this.onChangeHandler}
-                           value = {this.state.myValue}
+                    <input className="add__author input-group-text"
+                           type="text"
+                           placeholder="Автор статьи"
+                           onChange={this.onChangeAuthor}
+                           value={this.state.textAuthor}
                     />
-                    <input type="text" placeholder="Автор статьи"/>
-                    <textarea name="text" placeholder="Введите текст статьи: "></textarea>
-                    <input type="checkbox" /> Я согласен с правилами
-                    <button className="btn-success btn-sm" onClick={this.onButtonClickHandler}>Получить введенный текст</button>
+                    <textarea className="add__text input-group-text"
+                              name="text"
+                              placeholder="Введите текст статьи: "
+                              onChange={this.onChangeTextDescription}
+                              value={this.state.textValue}
+                    />
+
+
+                    <input className="add__checkrule"
+                           type="checkbox" /> Я согласен с правилами
+
+                    <button className="add__btn btn-success btn-sm"
+                            onClick={this.onButtonClickHandler}>Отправить</button>
+
                 </form>
             </div>
 
