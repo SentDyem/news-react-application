@@ -28,13 +28,16 @@ class Add extends React.Component {
     };
 
     onChangeCheckBox = (e) => {
-        this.setState(e.target.checked)
-    }
+        this.setState(
+            {
+                agree: e.target.checked
+            });
+    };
 
 
     render()
     {
-        const { textAuthor, textValue } = this.state;
+        const { textAuthor, textValue, agree } = this.state;
         return (
             <div>
                 <form className='add'>
@@ -57,9 +60,12 @@ class Add extends React.Component {
                            onChange = {this.onChangeCheckBox}
                     /> Я согласен с правилами
 
-                    <button className="add__btn btn-success btn-sm"
-
-                            onClick={this.onButtonClickHandler}>Отправить</button>
+                    <button className="add__btn btn-sm"
+                            onClick={this.onButtonClickHandler}
+                            disabled={!agree}
+                    >
+                        Отправить
+                    </button>
 
                 </form>
             </div>
