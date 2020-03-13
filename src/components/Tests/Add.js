@@ -3,7 +3,8 @@ import React from "react";
 class Add extends React.Component {
     state = {
         textAuthor: '',
-        textValue: ''
+        textValue: '',
+        agree: 'false'
     };
 
     onChangeAuthor = (e) => {
@@ -26,9 +27,14 @@ class Add extends React.Component {
             )
     };
 
+    onChangeCheckBox = (e) => {
+        this.setState(e.target.checked)
+    }
+
 
     render()
     {
+        const { textAuthor, textValue } = this.state;
         return (
             <div>
                 <form className='add'>
@@ -36,20 +42,23 @@ class Add extends React.Component {
                            type="text"
                            placeholder="Автор статьи"
                            onChange={this.onChangeAuthor}
-                           value={this.state.textAuthor}
+                           value={textAuthor}
                     />
                     <textarea className="add__text input-group-text"
                               name="text"
                               placeholder="Введите текст статьи: "
                               onChange={this.onChangeTextDescription}
-                              value={this.state.textValue}
+                              value={textValue}
                     />
 
 
                     <input className="add__checkrule"
-                           type="checkbox" /> Я согласен с правилами
+                           type="checkbox"
+                           onChange = {this.onChangeCheckBox}
+                    /> Я согласен с правилами
 
                     <button className="add__btn btn-success btn-sm"
+
                             onClick={this.onButtonClickHandler}>Отправить</button>
 
                 </form>
