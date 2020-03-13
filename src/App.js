@@ -4,7 +4,7 @@ import News from "./components/News/News";
 import Comments from "./components/Comments/Comments";
 import myNews from "./components/News/Data/myNews";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TestInput from '../src/components/Tests/TestInput';
+import Add from './components/Tests/Add';
 import TestInput2 from "./components/Tests/TestInput2";
 
 function App() {
@@ -15,8 +15,7 @@ function App() {
         </div>
       <News data = {myNews}/>
       <Comments />
-      <TestInput />
-      <TestInput2 />
+      <Add />
     </div>
   );
 }
