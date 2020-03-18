@@ -4,6 +4,7 @@ class Add extends React.Component {
     state = {
         textAuthor: '',
         textValue: '',
+        agree: false
     };
 
     onChangeAuthor = (e) => {
@@ -34,8 +35,8 @@ class Add extends React.Component {
     };
 
     validate = () => {
-        const {textAuthor, textValue} = this.state;
-        if (textAuthor == 0 || textValue == 0)
+        const {textAuthor, textValue, agree} = this.state;
+        if (textAuthor.trim() && textValue.trim() && agree)
         {
             return true;
         }
@@ -49,7 +50,7 @@ class Add extends React.Component {
 
     render()
     {
-        const { textAuthor, textValue} = this.state;
+        const { textAuthor, textValue, agree} = this.state;
         return (
             <div>
                 <form className='add'>
@@ -74,7 +75,7 @@ class Add extends React.Component {
 
                     <button className="add__btn btn-sm"
                             onClick={this.onButtonClickHandler}
-                            disabled={this.validate()}>
+                            disabled={!this.validate()}>
                         Отправить
                     </button>
                 </form>
